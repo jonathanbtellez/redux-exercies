@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { addTodo } from '../../store/actions/actions'
-import ToDoForm from '../pure/ToDoform'
+import ToDoForm from '../pure/TodoForm'
+
 
 const mapStateToProps = (state) => ({
     // Not necessary

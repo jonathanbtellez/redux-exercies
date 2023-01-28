@@ -2,7 +2,6 @@ import { combineReducers } from "redux";
 import { todosReducer } from "./todosReducer";
 import { filterReducer } from "./filterReducer";
 
->>>>>>> Local-proyect
 
 export const rootReducer = combineReducers(
     {

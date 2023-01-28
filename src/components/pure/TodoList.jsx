@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ToDo from './ToDo';
+import ToDo from './Todo';
 
 
 const ToDoList = ({todos, onTodoClick}) => {

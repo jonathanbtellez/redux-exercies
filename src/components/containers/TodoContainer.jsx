@@ -1,6 +1,6 @@
 
 import { connect } from 'react-redux'
-import ToDoList from '../pure/ToDoList'
+import ToDoList from '../pure/TodoList'
 import { toggleTodo } from '../../store/actions/actions'
 
 

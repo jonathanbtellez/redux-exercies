@@ -1,6 +1,6 @@
 import './App.css';
-import TodosContainer from './components/containers/ToDoContainer';
-import ToDoFormContainer from './components/containers/ToDoFormContainer';
+import TodosContainer from './components/containers/TodoContainer';
+import ToDoFormContainer from './components/containers/TodoFormContainer';
 import FilterOptions from './components/pure/FilterOptions';
 
 
