@@ -4,6 +4,17 @@ import './index.css';
 import App from './App';
 import AppReduxSaga from './AppReduxSaga';
 import reportWebVitals from './reportWebVitals';
+import AppReduxSaga from './AppReduxSaga';
+
+// Redux imports
+//Initial config
+// import storeConfig from './store/config/storeConfig';
+// import Config function of App store
+import { Provider } from 'react-redux';
+import { appAsyncStore } from './store/config/storeAsyncConfig';
+
+//Store that use redux saga
+let store = appAsyncStore();
 
 // Redux Imports:
 import { Provider } from 'react-redux';
@@ -15,9 +26,11 @@ let appStore = createAppStore()
 let appAsyncStore = createAppAsyncStore()
 
 ReactDOM.render(
-  <Provider store={appAsyncStore}>
+
+  // Using the app store config
+  // <Provider store={storeConfig}> 
+  <Provider store={store}>
     <React.StrictMode>
-      {/* <App /> */}
       <AppReduxSaga />
     </React.StrictMode>
   </Provider>,

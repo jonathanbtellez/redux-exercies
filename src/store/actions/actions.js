@@ -1,22 +1,23 @@
-// Incremental ID for Todos
+// Auto increment Id for TODOS
+
 let nextTodoID = 0;
 
-// Action Types:
+// Action types:
 export const ADD_TODO = 'ADD_TODO';
-export const TOGGLE_TODO = 'TOGGLE_TODO'
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+export const TOGGLE_TODO = 'TOGGLE_TODO';
+export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 
 
 /**
  * 
- * @param {string} text 
- * @returns action ADD_TODO
+ * @param {String} text 
+ * @returns actions ADD_TODO
  */
-export const addTodo = (text) => {
+export const addTodo = (text) =>{
     return {
         type: ADD_TODO,
         payload: {
-            id: nextTodoID ++,
+            id: nextTodoID++,
             text
         }
     }
@@ -24,13 +25,14 @@ export const addTodo = (text) => {
 
 /**
  * 
- * @param {number} id 
+ * @param {Number} id 
  * @returns action TOGGLE_TODO
  */
+
 export const toggleTodo = (id) => {
     return {
         type: TOGGLE_TODO,
-        payload: {
+        payload:{
             id
         }
     }
@@ -38,7 +40,7 @@ export const toggleTodo = (id) => {
 
 /**
  * 
- * @param {string} filter 
+ * @param {String} filter 
  * @returns action SET_VISIBILITY_FILTER
  */
 export const setVisibilityFilter = (filter) => {
@@ -49,8 +51,3 @@ export const setVisibilityFilter = (filter) => {
         }
     }
 }
-
-
-
-
-

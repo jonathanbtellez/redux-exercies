@@ -1,15 +1,16 @@
 import { API_CALL_FAILURE, API_CALL_REQUEST, API_CALL_SUCCESS } from "../actions/asyncActions";
 
-// Initial State for userState
+//Initial state for userState
+
 const initialState = {
     fetching: false,
     token: null,
     error: null,
-    loged: false
+    logged: false
 }
 
-export const userReducer = (state=initialState, action) => {
 
+export const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case API_CALL_REQUEST:
             return {
@@ -17,7 +18,7 @@ export const userReducer = (state=initialState, action) => {
                 fetching: true,
                 token: null,
                 error: null,
-                loged: false
+                logged: false
             }
         case API_CALL_SUCCESS:
             return {
@@ -25,7 +26,7 @@ export const userReducer = (state=initialState, action) => {
                 fetching: false,
                 token: action.payload.token,
                 error: null,
-                loged: true,
+                logged: true,
             }
         case API_CALL_FAILURE:
             return {
@@ -33,10 +34,9 @@ export const userReducer = (state=initialState, action) => {
                 fetching: false,
                 token: null,
                 error: action.payload.error,
-                loged: false
+                logged: false,
             }
         default:
             return state;
     }
-
 }

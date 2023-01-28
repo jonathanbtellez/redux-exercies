@@ -1,11 +1,11 @@
-import { ADD_TODO, TOGGLE_TODO } from '../actions/actions';
+// Initial todos state
 
-// Initial TodosState
-// Initialy todos is empty
+import { ADD_TODO, TOGGLE_TODO } from "../actions/actions";
+
+// Initial todos is empty
 let initialState = [];
 
-export const todosReducer = (state=initialState, action) => {
-    
+export const todosReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TODO:
             return [
@@ -19,15 +19,11 @@ export const todosReducer = (state=initialState, action) => {
         case TOGGLE_TODO:
             return state.map((todo) => 
                 (todo.id === action.payload.id)
-                ?
-                {
-                    ...todo,
+                ? { ...todo,
                     completed: !todo.completed
                 }
-                :
-                todo
+                : todo
             )
-    
         default:
             return state;
     }

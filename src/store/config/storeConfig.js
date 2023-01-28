@@ -1,29 +1,15 @@
-import createSagaMiddleware from 'redux-saga';
-import { applyMiddleware, compose, createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { rootReducer } from '../reducers/rootReducer';
-import { watcherSaga } from '../sagas/sagas';
+import { configureStore } from "@reduxjs/toolkit";
+import { filterReducer } from "../reducers/filterReducer";
+import { todosReducer } from "../reducers/todosReducer";
+import { userReducer } from "../reducers/userReducer";
 
-export const createAppStore = () => {
-    let store = createStore(rootReducer, composeWithDevTools());
 
-    return store;
-}
+export default configureStore({
+    reducer: {
+        todosState: todosReducer,
+        filterState: filterReducer,
+        // Async example login reducer
+        userState: userReducer
+    }
+})
 
-export const createAppAsyncStore = () => {
-
-    const sagaMiddleware = createSagaMiddleware();
-
-    let store = createStore(
-        rootReducer,
-        compose(
-            applyMiddleware(sagaMiddleware), 
-            composeWithDevTools()
-        )
-        );
-    
-    // We init the Watcher Saga
-    sagaMiddleware.run(watcherSaga);
-
-    return store;
-}
